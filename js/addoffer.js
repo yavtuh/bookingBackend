@@ -11,23 +11,23 @@ function getNewOffer(data){
     return {
         id: maxId + 1,
         author: {
-            avatar: `img/avatars/user0${functions.getRandomInt(constants.countAvatar.min, constants.countAvatar.max)}.png`
+            avatar: data.avatar
         },
         offer: {
             title: data.title,
             address: data.address,
-            price: data.price,
+            price: Number(data.price),
             type: data.type,
-            rooms: data.room_number,
-            guests: data.capacity,
+            rooms: Number(data.room_number),
+            guests: Number(data.capacity),
             checkin: data.timein,
             checkout: data.timeout,
             features: data.feature.split(','),
             description: data.description,
-            photos: functions.getRandomUniqueArray(constants.photosArray),
+            photos: [data.house],
             location: {
-                x: data.locationX,
-                y: data.locationY
+                x: Number(data.locationX),
+                y: Number(data.locationY)
             }
         },
     }

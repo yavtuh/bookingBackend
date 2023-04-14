@@ -5,7 +5,7 @@ module.exports.countAvatar = {
 };
 module.exports.countPrice = {
     min: 10,
-    max: 10000
+    max: 100000
 };
 module.exports.countRooms = {
     min: 1,
